@@ -54,8 +54,8 @@ int ca_filter(struct __sk_buff *skb)
     payload_offset = ETH_HLEN + ip_header_length + tcp_header_length;
     payload_length = ip->tlen - ip_header_length - tcp_header_length;
 
-    // minimum length of ca request is always geater than 15 bytes
-    if (payload_length < 15)
+    // minimum length of ca request is always greater than 16 bytes
+    if (payload_length < 16)
     {
         goto DROP;
     }
